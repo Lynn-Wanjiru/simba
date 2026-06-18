@@ -91,7 +91,7 @@ export function NavBar() {
           className="hidden md:flex items-center gap-2 px-6 py-2.5 rounded-full bg-primary text-white text-sm relative overflow-hidden group"
         >
           <motion.div
-            className="absolute inset-0 bg-linear-to-r from-primary to-accent"
+            className="absolute inset-0 bg-gradient-to-r from-primary to-accent"
             initial={{ x: "100%" }}
             whileHover={{ x: 0 }}
             transition={{ duration: 0.3 }}
