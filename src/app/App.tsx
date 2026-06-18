@@ -8,10 +8,11 @@ import { ValuesSection } from "./components/ValuesSection";
 import { TeamSection } from "./components/TeamSection";
 import { CTASection } from "./components/CTASection";
 import { FooterSection } from "./components/FooterSection";
+import { WhatsAppButton } from "./components/WhatsAppButton";
 
 export default function App() {
   return (
-    <div className="bg-[#080a10] min-h-screen overflow-x-hidden">
+    <div className="bg-white text-gray-900 min-h-screen overflow-x-hidden">
       <NavBar />
       <HeroSection />
       <StatsBar />
@@ -22,6 +23,7 @@ export default function App() {
       <TeamSection />
       <CTASection />
       <FooterSection />
+      <WhatsAppButton />
     </div>
   );
 }

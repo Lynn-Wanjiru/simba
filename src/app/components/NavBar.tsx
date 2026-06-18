@@ -45,7 +45,7 @@ export function NavBar() {
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-[#080a10]/90 backdrop-blur-xl border-b border-white/5 shadow-[0_0_60px_rgba(16,185,129,0.05)]"
+          ? "bg-white/90 backdrop-blur-xl border-b border-gray-200 shadow-lg"
           : "bg-transparent"
       }`}
     >
@@ -70,14 +70,14 @@ export function NavBar() {
               onClick={() => scrollTo(item.id)}
               className={`relative px-5 py-2 rounded-full text-sm transition-all duration-300 ${
                 active === item.id
-                  ? "text-white"
-                  : "text-white/50 hover:text-white"
+                  ? "text-gray-900"
+                  : "text-gray-600 hover:text-gray-900"
               }`}
             >
               {active === item.id && (
                 <motion.div
                   layoutId="pill"
-                  className="absolute inset-0 rounded-full bg-white/10 border border-white/10"
+                  className="absolute inset-0 rounded-full bg-gray-100 border border-gray-300"
                   transition={{ type: "spring", stiffness: 350, damping: 35 }}
                 />
               )}
@@ -91,7 +91,7 @@ export function NavBar() {
           className="hidden md:flex items-center gap-2 px-6 py-2.5 rounded-full bg-primary text-white text-sm relative overflow-hidden group"
         >
           <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-primary to-accent"
+            className="absolute inset-0 bg-linear-to-r from-primary to-accent"
             initial={{ x: "100%" }}
             whileHover={{ x: 0 }}
             transition={{ duration: 0.3 }}
@@ -102,7 +102,7 @@ export function NavBar() {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-white p-2"
+          className="md:hidden text-gray-900 p-2"
         >
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
@@ -114,7 +114,7 @@ export function NavBar() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
-          className="md:hidden bg-[#0f1219]/95 backdrop-blur-xl border-t border-white/5 px-6 py-6 flex flex-col gap-3"
+          className="md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-200 px-6 py-6 flex flex-col gap-3"
         >
           {navItems.map((item) => (
             <button
@@ -122,8 +122,8 @@ export function NavBar() {
               onClick={() => { scrollTo(item.id); setMobileOpen(false); }}
               className={`text-left py-3 px-4 rounded-xl text-base transition-all ${
                 active === item.id
-                  ? "bg-primary/20 text-primary"
-                  : "text-white/60 hover:text-white hover:bg-white/5"
+                  ? "bg-primary/10 text-primary"
+                  : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
               }`}
             >
               {item.label}
